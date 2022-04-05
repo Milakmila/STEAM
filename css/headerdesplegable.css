@@ -1,0 +1,205 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root{
+    --dark-color:black;
+    --white-color:white;
+    --violet: rgb(69,45,128);
+    --green-principal:rgb(76,137,42);
+    --green-secundario: rgb(146,204,2);
+    --yellow: rgb(255,185,0);
+    --blue-dark: rgb(38,39,59);
+    --grey-color: rgb(196,196,196); 
+   
+    
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+h1,h2,h3{
+    color: var(--violet);
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    font-size: 1em;
+    font-family: 'Montserrat', sans-serif;
+}
+a{
+    font-size: 0.8em;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+.logo-index{
+  
+  display: grid;
+  grid-template-areas:
+  "logotipo user "
+  ;
+  grid-template-columns: 44% 50%;
+}
+.logo-index img{
+  
+  grid-area: logotipo;
+    width: 80%;
+
+  }
+
+.usuario{
+  display: grid;
+  grid-area: user;
+  margin-top: 18px;
+  grid-template-columns: 36px 70%;
+  grid-template-rows: 10px 20px;
+}
+.usuario i{
+    grid-row:1/span(2);
+    grid-column: 1;
+    align-self: center;
+    color: var(--violet);
+    font-size: 30px;
+    
+
+}
+.usuario p{
+    font-size: 0.8em;
+    font-weight: 700;
+   
+    align-self:center;
+}
+.down-arrow{
+  justify-self: baseline;
+  grid-column: 2;
+  margin-left: 30px;
+
+}
+.down-arrow i{
+  color: var(--green-secundario);
+  font-size:30px ;
+
+}
+
+#chk-configuracion{
+  display: none;
+}
+#chk-configuracion:checked ~.items{
+  display: block;
+  display: grid;
+  grid-template-columns: 50px;
+  grid-template-rows: repeat(3, 10px);
+  gap: 20px;
+  
+
+
+}
+.btn-desplegable{
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;/*Al pasar por encima muestra la manito*/
+}
+.items{
+  background-color:rgba(69,45,128,0.8); 
+  width: 12vw;
+  height: 10vw;
+  display: none;
+}
+
+.item{
+  padding: 0.7rem;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+.item:hover{
+  color: var(--green-secundario);
+}
+
+  .line-header1{
+    grid-area: linea;
+  max-width: 425px;
+  height: 5px;
+  background-color: var(--violet);
+  }
+
+  @media screen and (min-width:768px) {
+   
+    body{
+        font-size: 1em;
+        font-family: 'Montserrat', sans-serif;
+    }
+  
+    .logo-index{
+      grid-template-columns: 70% 30%;
+     
+    }
+    .logo-index img{
+      max-width: 300px;
+    }
+    .usuario{
+      margin-top: 60px;
+      grid-template-columns: 55px auto;
+      grid-template-rows:20px 30px;
+    }
+  .usuario i{
+    font-size: 3em;
+
+  }
+  .usuario p{
+    font-size: 1.2em;
+    font-weight: 700;
+    align-self:center;
+  }
+
+
+  .line-header1{
+  max-width: 768px;
+  }
+   
+  }
+
+  @media screen and (min-width:1024px) {
+    body{
+      font-size: 1.2em;
+    }
+    .logo-index img{
+      max-width: 450px;
+    }
+    .usuario i{
+      font-size: 40px;
+    
+    }
+    .usuario p{
+        font-size: 1.2em;
+        margin-left: 4px;
+    }
+    .down-arrow{
+      margin-left: 50px;
+    }
+
+    .line-header1{
+      max-width: 1024px;
+      }
+       
+  }
+
+  @media screen and (min-width:1440px) {
+    body{
+      font-size: 1.5em;
+    }
+    .usuario{
+      grid-template-columns: 100%;
+    }
+    .usuario i{
+      font-size: 80px;
+    }
+    .line-header1{
+      max-width: 1440px;
+    }
+    .down-arrow i{
+      font-size: 50px;
+      margin-left: 30px;
+    }
+
+  }

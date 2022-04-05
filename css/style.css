@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root{
+    --dark-color:black;
+    --white-color:white;
+    --violet: rgb(69,45,128);
+    --green-principal:rgb(76,137,42);
+    --green-secundario: rgb(146,204,2);
+    --yellow: rgb(255,185,0);
+    --blue-dark: rgb(38,39,59);
+    --grey-color: rgb(196,196,196); 
+   
+    
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+h1,h2,h3{
+    color: var(--violet);
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+}
+a{
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+
+/*---------LOGIN STUDENTS------------*/
+.fondo-login{
+    background-image: url(../images/particpar.jpg);
+    background-repeat: no-repeat;
+    background-size: 220%;
+
+}
+#login{
+    display: grid;
+    grid-template-areas: 
+    "imagenes-login" 
+    "login-user";
+    background-color: rgba(255, 255, 255, 0.747);
+    margin: 25% auto ;
+ 
+}
+.imagenes-login{
+    grid-area: imagenes-login;
+    display: grid;
+
+    
+}
+.logotipo{
+    max-width: 100%;
+    justify-self: center;
+    margin-bottom: 2rem;
+}
+
+.fondo-morado{
+    background-image: url(../images/trebol-grande-derecha.svg);
+    background-position-x: -75px;
+    background-position-y: 120px;
+    background-repeat: no-repeat;
+
+
+}
+.form-login{
+    grid-area: login;
+    display: grid;
+   
+}
+
+
+.form-login h2{
+    text-align:center;
+    color: var(--white-color);
+    font-weight: 900;
+    margin-bottom: 2rem;
+}
+
+.form-group{
+    margin: 8px;
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+     
+    
+}
+.form-label{
+    margin: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    justify-content: center;
+    color: var(--white-color);
+    text-align: center;
+
+}
+.form-input{
+    background-color:rgba(191, 174, 236, 0.561) ;
+    border-radius: 10px;
+    border-width: 0px;
+    outline: none;
+    margin-bottom: 5px;
+
+
+}
+.botones{
+    display: grid;
+    justify-self:center ;
+    margin: 3px;
+}
+.btn-verde{
+    background-color:var(--verde-principal);
+    border-radius: 10px;
+    border-width: 0px;
+    outline: none;
+    padding: 10px;
+    margin-bottom: 25px;
+    
+}
+.btn-verde i{
+    color: var(--white-color);
+}
+.btn-verde h5{
+    color: var(--white-color);
+    font-weight: 600;
+}
+
+/*--------LOGIN PRINCIPAL------------*/
+
+.header1{
+    font-weight: 500;
+    display: grid;
+    grid-template-columns:76% 20%;
+    grid-template-rows:1fr;
+    padding: 20px;
+
+}
+ 
+.logotipo{
+    max-width: 250px;
+}
+
+.usuario{
+    max-width: 150px;
+    display: grid;
+    grid-template-columns:30% 50%;
+    grid-template-rows: 35% ;
+    gap: 10px;
+    margin-top: 20px;
+}
+.usuario img{
+    max-width: 30px;
+    grid-row:1/3;
+    grid-column: 1;
+    column-gap: 20px;
+}
+.usuario p{
+    grid-column: 2;
+    font-size: 15px;
+}
+#flecha{
+    row-gap: 2px;
+    max-width: 50%;
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: center;
+}
+.header2{
+    display: grid;
+    grid-template-columns: 76% 20%;
+    background-color:rgba(69,45,128,0.2);
+}
+.menu-hamburguesa{
+    margin: 50px 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 0.1fr);
+}
+.menu-hamburguesa img{
+    max-width: 50px;
+    background-color: var(--morado);
+
+}
+.menu-hamburguesa h3{
+    margin: 10px;
+    grid-column: 2;
+    color: var(--verde-principal);
+
+}
+
+
+
+/*--------MEDIA QUERY------------*/
+
+@media screen and (min-width:768px) {
+    h1,h2,h3{
+        color: var(--morado);
+        font-family: 'Roboto', sans-serif;
+    }
+    body{
+        font-size: 20px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    a{
+        font-size: 18px;
+        font-family: 'Montserrat', sans-serif;
+        
+    }
+    #login{
+        grid-template-areas: 
+    "imagenes-login login" ;
+        
+    }
+    .fondo-morado{
+        background-image: url(../images/trebol-grande-tablet.svg);
+        background-position-x: 10px;
+        background-position-y: 200px;
+        background-repeat: no-repeat;
+    }
+    #logotipo{
+        max-width: 80%;
+        justify-self: center;
+        
+    }
+    .treboles{
+        max-width: 30%;
+    }
+    .form-input{
+        justify-self: center;
+       
+    }
+    .form-login{
+        margin: 40px ;
+        align-self: center;
+        justify-self: center;
+    }
+    .form-label{
+      
+    }
+
+    .usuario img{
+        max-width: 40px;
+
+
+    }
+    .usuario p{
+        font-size: 20px;
+    }
+    #flecha{
+        max-width: 40%;
+        padding-top: 10px;
+    }
+    
+}
+
+@media screen and (min-width:1024px) {
+    h1,h2,h3{
+        color: var(--morado);
+        font-family: 'Roboto', sans-serif;
+    }
+    body{
+        font-size: 24px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    a{
+        font-size: 20px;
+        font-family: 'Montserrat', sans-serif;
+        
+    }
+    #login{
+            grid-template-areas: 
+            "imagenes-login login";
+            margin: 30px 80px;
+    
+        
+    }
+    #logotipo{
+        max-width: 100%;
+    }
+    .fondo-morado{
+        background-image: url(../images/trebol-grande-izquierda.svg);
+        background-position-x: 10px;
+        background-position-y: 200px;
+        background-repeat: no-repeat;
+    }
+
+    .usuario{
+        max-width: 450px;
+    }
+    .usuario img{
+        max-width: 60px;
+        column-gap: 20px;
+
+
+    }
+    .usuario p{
+        font-size: 23px;
+    }
+    #flecha{
+        max-width: 45%;
+        padding-top: 20px;
+    }
+    
+    
+
+}
+

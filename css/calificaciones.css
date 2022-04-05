@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root{
+    --dark-color:black;
+    --white-color:white;
+    --verde-principal:rgb(76,137,42);
+    --verde-secundario: rgb(146,204,2);
+    --amarillo: rgb(255,185,0);
+    --azul: rgb(38,39,59);
+    --morado: rgb(69,45,128);
+    
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+h1,h2,h3{
+    color: var(--morado);
+}
+button{
+    font-family: 'Montserrat', sans-serif;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+.students-calificaciones{
+    display: grid;
+    grid-template-areas:
+    "idioma"
+    "promedio"
+    "cursos"
+    "tabla";
+    
+
+}
+.botones{
+    margin: 3px;
+}
+.btn-idioma{
+    grid-area: idioma;
+    border: 2px solid var(--morado);
+    border-radius: 20px;
+    background-color: white;
+    font-weight: 800;
+    min-width: 30%;
+    justify-self: center;
+
+}
+.btn-idioma p{
+    color: var(--morado);
+    font-weight: 500;
+
+}
+
+.btn-verde{
+    grid-area: promedio;
+    display: grid;
+    grid-template-columns: 2rem 4rem;
+    background-color:var(--verde-principal);
+    border-radius: 10px;
+    border-width: 0px;
+    outline: none;
+    padding: 10px;
+    margin-bottom: 25px;
+    
+}
+.btn-verde i{
+    color: var(--white-color);
+}
+.btn-verde h5{
+    color: var(--white-color);
+    font-weight: 600;
+}
+
+.btn-curso{
+    grid-area: cursos;
+    border-radius: 20%;
+
+}
+#search{
+    border-radius: 20px;
+
+}
+table, tr{
+  
+    border-collapse: collapse;
+    border: 5px solid var(--morado);
+
+}
+/*colgroup y colspalna*/
+.table{
+    grid-area: tabla;
+    display: grid;
+    text-decoration: none;
+   
+}
+
+.table th{
+    padding: 10px;
+    color: var(--verde-principal);
+
+}
+.table td{
+    padding: 20px;
+    text-decoration: none;
+    text-align: center;
+}
+grid-template-columns: 20% 60% 20%;
+grid-template-rows: repeat(3,1fr);
