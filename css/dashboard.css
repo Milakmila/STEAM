@@ -19,6 +19,7 @@
   
 body{
     font-family: 'Montserrat', sans-serif;
+
 }
 h1,h2,h3{
     font-family: 'Roboto', sans-serif;
@@ -59,7 +60,7 @@ p{
     border-radius: 20px;
     background-color: white;
     font-weight: 800;
-    min-width: 30%;
+    width: 100px;
     justify-self: center;
 
 }
@@ -119,6 +120,22 @@ p{
 
 .ClasesPrioritarias{
     grid-area:clasesprioritarias ;
+    display: grid;
+    grid-template-areas: 
+    "titulo"
+    "clase1"
+    "clase2"
+    ;
+   
+}
+.ClasesPrioritarias h2{
+    grid-area: titulo;
+}
+.clase4{
+    grid-area: clase1;
+}
+.clase5{
+    grid-area: clase2;
 }
 .ClasesPrioritarias h2{
     text-align: center;
@@ -126,13 +143,55 @@ p{
     font-weight: 600;
 }
 .clase img{
-    align-items: center;
-    justify-content: center;
-    
+    width: 60%;
+    border-radius: 10px;
+    border: 6px solid var(--green-secundario);
+   
 }
 
+.clase > *{
+    text-align: center;
+
+ }
+ .clase a{
+    text-decoration: none;
+    color: aquamarine;
+ }
+ 
+.footer p{
+    padding: 2rem;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--violet);
+    color: var(--white-color);
+    text-align: center;
+}
+
+ @media screen and (min-width:768px) {
+    .PrincipalLogin{
+        align-self: center;
+        justify-items: center;
+        grid-template-areas:
+        "idioma titulo"
+        " todo  parahoy"
+        "clasesprioritarias clasesprioritarias";
+        gap:1em ;
+        grid-template-columns: 20% 30% 50% ;
+      
+    }
+    .ClasesPrioritarias{
+        grid-template-areas: 
+            "titulo titulo"
+            "clase1 clase2"
+            ;
+        grid-template-columns: 40% 40%;
+
+    }
+
+
+ }
   /*-------------Mis cursos------------*/
- .mis-cursos{
+ /*
+  .mis-cursos{
      display: grid;
      gap: 25px;
      
