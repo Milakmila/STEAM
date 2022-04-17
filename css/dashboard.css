@@ -142,10 +142,15 @@ p{
     color: #01613B;
     font-weight: 600;
 }
+
 .clase img{
+    display: grid;
     width: 60%;
     border-radius: 10px;
     border: 6px solid var(--green-secundario);
+    align-self: center;
+    justify-self: center;
+    justify-items: center;
    
 }
 
@@ -184,6 +189,7 @@ p{
             "clase1 clase2"
             ;
         grid-template-columns: 40% 40%;
+        justify-content: center;
 
     }
 

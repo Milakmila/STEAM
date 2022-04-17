@@ -28,15 +28,20 @@ button{
     "idioma"
     "promedio"
     "cursos"
-    "tabla";
+    "tabla"; 
     
 
 }
 .botones{
+    display: grid;
+    grid-template-rows: auto auto auto;
     margin: 3px;
+
 }
 .btn-idioma{
     grid-area: idioma;
+    grid-column: 1/3;
+    grid-row: 1;
     border: 2px solid var(--morado);
     border-radius: 20px;
     background-color: white;
@@ -50,9 +55,13 @@ button{
     font-weight: 500;
 
 }
-
+.btn-verde a{
+    text-decoration: none;
+    
+}
 .btn-verde{
     grid-area: promedio;
+    grid-row: 2;
     display: grid;
     grid-template-columns: 2rem 4rem;
     background-color:var(--verde-principal);
@@ -61,6 +70,7 @@ button{
     outline: none;
     padding: 10px;
     margin-bottom: 25px;
+    
     
 }
 .btn-verde i{
@@ -78,21 +88,82 @@ button{
 }
 #search{
     border-radius: 20px;
+    grid-column: 1/3;
+    grid-row: 3;
+    justify-self: center;
+
 
 }
-table, tr{
-  
+.table tr{
     border-collapse: collapse;
-    border: 5px solid var(--morado);
+    border: 2px solid var(--morado);
+
 
 }
-/*colgroup y colspalna*/
+table{
+    border: none;
+    margin: 10px;
+}
 .table{
     grid-area: tabla;
     display: grid;
-    text-decoration: none;
    
 }
+.filaprincipal{
+    display: grid;
+    grid-template-areas: 
+    "actividad1 puntaje1"
+    ;
+}
+.actividad1{
+    grid-area: actividad1;
+    grid-column: 80% 20%;
+}
+.fecha1{
+    display: none;
+    grid-area: fecha1;
+}
+.puntae1{
+    grid-area: puntaje1;
+}
+.de1{
+    display: none;
+    grid-area: de1;
+
+}
+.fila{
+    display: grid;
+    grid-template-areas:
+    "actividad puntaje"
+    "fecha puntaje"
+    ;
+    grid-template-columns: 50% 50%;
+}
+
+.actividad{
+    grid-area: actividad ;
+     padding: 0;
+    border-collapse: collapse;
+    
+
+}
+.fecha{
+    grid-area: fecha;
+    padding: 0;
+    border-collapse: collapse;
+  
+}
+.puntaje{
+    grid-area: puntaje;
+    align-self: center;
+    
+}
+
+.de{
+    grid-area: de;
+    display: none;
+}
+
 
 .table th{
     padding: 10px;
@@ -104,5 +175,319 @@ table, tr{
     text-decoration: none;
     text-align: center;
 }
-grid-template-columns: 20% 60% 20%;
-grid-template-rows: repeat(3,1fr);
+
+/* PROFESORES*/
+
+.filaprincipal1{
+    display: grid;
+    grid-template-areas: 
+    "estudiante1 trabajo2"
+    ;
+
+}
+.estudiante1{
+    grid-area: estudiante1;
+}
+.trabajo1{
+    grid-area: trabajo2;
+}
+.puntaje2{
+    grid-area: puntaje2 ;
+    display: none;
+}
+.correo1{
+    grid-area: correo1;
+    display: none;
+}
+.promedio1{
+    grid-area: promedio2;
+    display: none;
+}
+
+.fila1{
+    display: grid;
+    grid-template-areas: 
+    "estudiante trabajo puntaje3"
+    "correo trabajo puntaje3"
+    ;
+    grid-template-columns: auto auto ;
+}
+.estudiante{
+    grid-area: estudiante;
+    font-weight: 500;
+}
+.estudiante i{
+    border-radius: 50%;
+    background-color: var(--morado);
+    color: white;
+    font-size: 16px;
+    padding: 5px;
+    margin-right: 20px;
+}
+.correo{
+    grid-area: correo;
+    font-weight: 300;
+    font-size: 0.2em;
+}
+.trabajos{
+    grid-area: trabajo;
+   
+}
+.trabajos >div{
+    border: 2px solid var(--verde-principal);
+    border-radius: 20px;
+    
+}
+.trabajos i{
+    color: var(--morado);
+    margin-right: 30px;
+
+}
+
+.puntaje3{
+    grid-area: puntaje3;
+
+}
+
+.promedio{
+    grid-area: promedio;
+    display: none;
+}
+
+.cta{
+    margin: auto;
+    background-color: rgb(110, 225, 187);
+    color: white;
+    text-decoration: none;
+    padding: 1.2em 3em;
+    border-radius: 4em;
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #333;
+    display: flex;
+    --opacity: 0;
+    --pointer: none;
+
+    opacity: var(--opacity);
+    pointer-events: var(--pointer);
+    transition: opacity 0.5s;
+}
+
+.modal:target{
+    --opacity: var(--opacity);
+    --pointer: unset;
+}
+
+.modalContainer{
+    margin: auto;
+    background-color: white;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90%;
+    overflow: hidden;
+    text-align: center;
+    padding: 2.5em 1.5em;
+    border-radius: 1em;
+}
+
+.modalImg{
+    margin: auto;
+    width: 70%;
+    display: block;
+}
+
+
+.modal:target .modalContainer{
+    animation: show 1s 0.5s backwards;
+}
+
+@keyframes show{
+    0%{transform: translateY(-150vh);}
+    100%{transform: translateY(0vh);}
+}
+
+.modalPicture{
+    width: 90%;
+    margin: 0 auto;
+    max-width: 400px;
+    margin-bottom: 2em;
+}
+
+.modal:target .modalPicture{
+    animation: scale 0.5s 1s backwards;
+}
+
+
+@keyframes scale{
+    0%{transform: scale(0);}
+}
+
+.modalTitle{
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+
+.modal:target .modalTitle{
+    animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: inherit;
+}
+
+@keyframes slidein {
+    from {
+      margin-top: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-top: 0%;
+      width: 100%;
+    }
+}
+  
+
+
+.modalTitle--bold{
+    font-weight: 800;
+}
+
+.modalP{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    line-height: 1.5
+}
+
+.modalClose{
+    display: inline-block;
+    border: 1px solid #333;
+    padding: 1em 2em;
+    text-decoration: none;
+    font-weight: 700;
+    color: #333;
+    border-radius: 0.4em;
+}
+
+@media (max-width: 600px){
+    .modalTitle{
+        font-size: 1.7em;
+    }
+}
+@media screen and (min-width:768px) {
+    .btn-idioma{
+        justify-self: baseline;
+    }
+    .btn-verde{
+        grid-row: 3;
+    }
+    #search{
+        justify-self: right;
+        margin-right: 20px;
+    }
+    .filaprincipal{
+        grid-template-areas: 
+        "actividad1 puntaje1 de1"
+        ;
+    }
+    .de1{
+        display: block;
+
+    }
+
+    .de{
+        display: block;
+        align-self: center;
+    }
+
+    .fila{
+        grid-template-areas:
+        "actividad puntaje de"
+        "fecha puntaje de"
+        ;
+        grid-template-columns: 36% 35% 29%;
+    }
+    /* PROFESORES*/
+    .filaprincipal1{
+        grid-template-areas: 
+        "estudiante1 trabajo2 puntaje2"
+        ;
+        
+    }
+    .puntaje2{
+        display: block;
+    }
+    .fila1{
+        grid-template-columns: 30% 40% 28% ;
+    }
+
+}
+
+@media screen and (min-width:1024px) {
+    .filaprincipal{
+        grid-template-areas: 
+        "actividad1 fecha1 puntaje1 de1"
+        ;
+    }
+    .fecha1{
+        display: block;
+    }
+    .fila{
+        grid-template-areas:
+        "actividad fecha puntaje de"
+        ;
+        grid-template-columns: 28% 25% 32% 11%;
+    }
+
+    /* PROFESORES*/
+
+    .filaprincipal1{
+        grid-template-areas: 
+        "estudiante1 correo1 trabajo2 puntaje2 promedio2"
+        ;
+        
+    }
+
+    .correo1{
+        display: block;
+    }
+    .promedio1{
+        display: block;
+    }
+
+    .fila1{
+        grid-template-areas: 
+        "estudiante correo trabajo puntaje3 promedio"
+        ;
+        grid-template-columns:21% 20% 21% 15% 26% ;
+    }
+    .estudiante{
+        align-self: center;
+    }
+    .correo{
+        display: block;
+        font-size: small;
+        align-self: center;
+    }
+    .puntaje3{
+        margin: none;
+    }
+    .promedio{
+        display: block;
+    }
+
+}
+
+@media screen and (min-width:1440px) {
+    .fila{
+        grid-template-areas:
+        "actividad fecha puntaje de"
+        ;
+        grid-template-columns: 24% 32% 23% 21%;
+    }
+}

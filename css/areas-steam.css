@@ -9,6 +9,7 @@
     --yellow: rgb(255,185,0);
     --blue-dark: rgb(38,39,59);
     --grey-color: rgb(196,196,196); 
+    --violet-clarito:#752995 ;
    
     
 }
@@ -41,4 +42,75 @@ button{
     color: var(--violet);
     font-weight: 500;
 
+}
+.banner{
+    width: 100%;
+}
+.EntregaTrabajos{
+    margin: 30px;
+}
+.EntregaTrabajos h2{
+    margin: 50px;
+}
+.card-entrega{
+    display: grid;
+    grid-template-areas: 
+    "imagen"
+    "titulo"
+    "parrafo"
+    "icons"
+    ;
+    gap: 2%;
+    padding: 20px;
+    margin: 20px;
+    border: 5px solid var(--violet);
+    border-radius: 20px;
+
+}
+
+.card-entrega img{
+    grid-area: imagen;
+    border-radius: 20px;
+    width: 300px;
+    justify-self: center;
+}
+.card-entrega h3{
+    grid-area: titulo;
+}
+.card-entrega p{
+    grid-area: parrafo;
+
+}
+.icons{
+    grid-area: icons;
+    display: flex;
+    color: var(--violet);
+    justify-self: center;
+
+}
+.icons i{
+    margin: 30px;
+    font-size: 1.2em;
+}
+.fa-comment{
+    color: #752995;
+}
+
+
+@media screen and (min-width:768px) {
+    .card-entrega{
+        display: grid;
+        grid-template-areas: 
+        "imagen titulo"
+        "imagen parrafo"
+        "imagen icons"
+        ;
+        margin: 5%;
+    
+    
+    }
+    .icons{
+        justify-content: space-evenly;
+    }
+    
 }
